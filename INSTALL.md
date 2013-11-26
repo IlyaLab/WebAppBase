@@ -5,7 +5,6 @@
 
 ### Basic Dependencies
 
-* [Git](http://git-scm.com/)
 * [Node.js v0.10.13](http://www.nodejs.org) or newer
 
 > To install global tools, you can use *sudo* or you can change the install path for node libraries to a file path 
