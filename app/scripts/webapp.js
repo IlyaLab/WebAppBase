@@ -93,14 +93,14 @@ function ( $,        _,            Backbone,   AppRouter,
         var that = this;
 
         this.Display.fetch({
-            url:"svc/configurations/display.json",
+            url:"configurations/display.json",
             success:function () {
-                document.title = (that.Display.get("title") || "QED");
+                document.title = (that.Display.get("title") || "Web App Base");
             }
         });
 
         this.Datamodel.fetch({
-            url:"svc/configurations/datamodel.json",
+            url:"configurations/datamodel.json",
             success: that.startupUI,
             error: that.startupUI
         });
