@@ -59,6 +59,6 @@ require.config({
     }
 });
 
-require(['qed'], function (QED) {
-    QED.initialize();
+require(['webapp'], function (WebApp) {
+    WebApp.initialize();
 });

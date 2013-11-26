@@ -1,0 +1,67 @@
+{
+    "title": "TCGA Cancer Regulome :: GeneSpot (development)",
+    "hangoutUrl": "https://plus.google.com/hangouts/_?gid=...",
+    "aboutLinks": [
+        {
+            "label": "TCGA Home",
+            "url": "http://cancergenome.nih.gov"
+        },
+        {
+            "label": "Cancer Regulome Home",
+            "url": "http://www.cancerregulome.org"
+        },
+        {
+            "divider": true,
+            "header": "About Us"
+        },
+        {
+            "label": "Institute for Systems Biology",
+            "url": "http://www.systemsbiology.org"
+        },
+        {
+            "label": "Shmulevich Lab",
+            "url": "http://www.systemsbiology.org/shmulevich-group"
+        },
+        {
+            "label": "Contact Us",
+            "url": "mailto:info@csacr.org?subject=GeneSpot Question"
+        },
+        {
+            "label": "Github Project",
+            "url": "http://github.com/cancerregulome/GeneSpot"
+        },
+        {
+            "divider": true,
+            "header": "Other Applications"
+        },
+        {
+            "label": "Regulome Explorer",
+            "url": "http://explorer.cancerregulome.org"
+        },
+        {
+            "label": "Pubcrawl",
+            "url": "http://pubcrawl.systemsbiology.net"
+        }
+    ],
+    "colormaps": {
+        "tumor_types": {
+            "BLCA": "#00008F",
+            "BRCA": "#0000B9",
+            "COAD": "#0000E3",
+            "GBM": "#000EFF",
+            "HNSC": "#0038FF",
+            "KIRC": "#0062FF",
+            "LAML": "#008BFF",
+            "LGG": "#00B5FF",
+            "LUAD": "#00DFFF",
+            "LUSC": "#0AFFF5",
+            "OV": "#34FFCB",
+            "PRAD": "#5EFFA1",
+            "READ": "#87FF78",
+            "SKCM": "#FFA500",
+            "STAD": "#FF5200",
+            "THCA": "#FD0000",
+            "UCEC": "#800000"
+        }
+    }
+}
