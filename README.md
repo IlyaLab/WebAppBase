@@ -1,7 +1,8 @@
 # Web App Base #
 This project provies a Web Application Template to standardize the development of new HTML5 web applications and
-web services in the Cancer Regulome project.  It allows our team to reduce development and maintainance time, and 
-supports rapid prototyping.
+web services for the [Shmulevich Group](http://shmulevich.systemsbiology.net) at the 
+[Institute for Systems Biology](http://systemsbiology.org).  It allows our team to reduce development and maintainance 
+time, and supports rapid prototyping.
 
 > **Operating System Support**
 > The example commands in this file are directed at Linux and Mac OS X users.  However, it should be expected (unless
@@ -16,15 +17,15 @@ supports rapid prototyping.
 
 Initial Dev Setup
 -----
-1. Clone this repository (@TODO : use submodules)
-2. Complete [Installation Guide](https://github.com/cancerregulome/WebAppBase/blob/master/INSTALL.md) instructions 
-3. Install [OAUTH Web Services](https://github.com/cancerregulome/OAuthWebServices)
+1. Fork this repository
+2. Complete [Installation Guide](https://github.com/IlyaLab/WebAppBase/blob/master/INSTALL.md) instructions 
+3. Install [Addama :: OAUTH Web Services](https://github.com/IlyaLab/Addama)
 4. Execute ```grunt server &```
 5. Open browser at [http://localhost:9010](http://localhost:9010)
 
 Runtime Configuration
 -----
-* This template is meant to be used in conjunction with https://github.com/cancerregulome/OAuthWebServices
+* This template is meant to be used in conjunction with https://github.com/IlyaLab/Addama
 * The following files are served through the /svc/configurations base URI
 
 ### display.json ###
@@ -35,12 +36,12 @@ Runtime Configuration
 ### Example configuration ###
 ```json
 {
-    "title":"TCGA Cancer Regulome :: Example",
+    "title":"Example Project",
     "hangoutUrl":"https://plus.google.com/hangouts/_?gid={app-gid}",
     "aboutLinks":[
         {
-            "label":"TCGA Home",
-            "url":"http://cancergenome.nih.gov"
+            "label":"Institute for Systems Biology",
+            "url":"http://systemsbiology.org"
         }
     ]
 }
@@ -66,7 +67,6 @@ Runtime Configuration
                     "label":"Protein Mutations Per Cancer Type",
                     "service":"lookups/mutations",
                     "description":"This dataset was prepared from TCGA MAF files produced by Firehose",
-                    "provenance":"provenance_v7_23nov_2012.txt",
                     "model":"Mutations"
                 },
                 "mutsig_rankings":{
