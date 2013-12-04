@@ -9,9 +9,7 @@ time, and supports rapid prototyping.
 > explicitly noted) that these technologies are supported by the Windows operating system.
 
 > **Browser Support**
-> The web applications developed using this template will adopt the HTML5 standard.  Backwards compatibility
-> with some older generation browsers is resolved through use of Google Chrome Frame (http://www.google.com/chromeframe) although support for this plugin will soon be deprecated (2014).
-> We will work to ensure that this template also supports tablets using HTML5 web browsers.  But we will focus our testing efforts to the most commonly-used platforms: iOS and Android.
+> The web applications developed using this template will adopt the HTML5 standard.  Usage will be supported in [compliant web browsers](http://whatbrowser.org). We will work to ensure that this template also supports tablets using HTML5 web browsers.  But we will focus our testing efforts for compatible browsers on the most commonly-used platforms: iOS and Android.
 
 Initial Dev Setup
 -----
