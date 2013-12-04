@@ -35,19 +35,18 @@ This template accesses the following APIs presented by a deployed version of [Ad
     
     /storage - GET/POST access to NOSQL databases (i.e. MongoDB)
         accepts arbitrary objects at arbitrary URIs
-        @todo: provide example query
 ```
 
-A standard development deployment should access ```/data``` and/or ```/datastores``` from a [production](https://genespot.cancerregulome.org/svc/data) or a [development service](https://csacr.systemsbiology.net/development), whereas ```/storage``` should be accessed from a  [local instance](http://localhost:9010/svc/storage).
+A standard development deployment should access ```/data``` and/or ```/datastores``` from a [production](https://genespot.cancerregulome.org/svc/data) or a [development service](https://csacr.systemsbiology.net/development/datastores), whereas ```/storage``` should be accessed from a  [local instance](http://localhost:9010/svc/storage).  @todo: provide examples for storage usage
 
 Runtime Configuration
 -----
-The following files are served from [/app/configurations/](tree/master/app/configurations) directory
+The following files can be configured from [/app/configurations/](https://github.com/IlyaLab/WebAppBase/tree/master/app/configurations) directory.  Developers should also check-in custom configuration files for their web apps.
 
-### display.json ###
- * Location: web services configurations path
+### [display.json](https://github.com/IlyaLab/WebAppBase/blob/master/app/configurations/display.json) ###
  * Specifies identifying UI elements (e.g. titles, links in the About menu)
- * Specifies links to Hangout URL
+ * Specifies links
+ * Configures Hangout URL
 
 ### Example configuration ###
 ```json
@@ -63,43 +62,32 @@ The following files are served from [/app/configurations/](tree/master/app/confi
 }
 ```
 
-### datamodel.json ###
- * Location: web services configurations path
+### [datamodel.json](https://github.com/IlyaLab/WebAppBase/blob/master/app/configurations/datamodel.json) ###
  * Specifies data source elements such as files, directories, and data services available to the application
  * Includes information such as labels and data types
-
-> This file allows the application to dynamically associate data sources to UI views
+ * This configuration file serves as an abstraction layer for the web application. The Data Menu is populated with its entries, and allows for the views to be dynamically integrated with the data.  No hardcoding necessary.
 
 ### Example configuration ###
 ```json
 {
-    "data_sets":{
-        "label":"Data Sets",
+    "datamodel":{
         "mutations":{
             "label":"Mutations",
             "catalog":{
-                "Protein_Mutations_Per_Cancer_Type":{
-                    "id":"Protein_Mutations_Per_Cancer_Type",
-                    "label":"Protein Mutations Per Cancer Type",
-                    "service":"lookups/mutations",
+                "Protein_Mutations_Per_Tumor_Type":{
+                    "label":"Protein Mutations Per Tumor Type",
+                    "service":"datastores/mutations/protein_mutations_per_tumor",
                     "description":"This dataset was prepared from TCGA MAF files produced by Firehose",
                     "model":"Mutations"
                 },
                 "mutsig_rankings":{
-                    "id":"mutsig_rankings",
                     "label":"MutSig Rankings",
-                    "service":"lookups/mutsig_rankings",
+                    "service":"datastores/mutations/mutsig_rankings",
                     "description":"This dataset was prepared from TCGA MutSig 2.0 data produced by Firehose"
                 },
                 "mutsig_top20":{
-                    "id":"mutsig_top20",
                     "label":"MutSig Top20",
-                    "service":"mutsig_rankings"
-                },
-                "mutsig_provenance":{
-                    "id":"mutsig_provenance",
-                    "label":"MutSig Provenance",
-                    "service":"data/provenance/mutsig_provenance.json"
+                    "service":"data/firehose/.../mutsig_top20.tsv"
                 }
             }
         }
@@ -112,16 +100,4 @@ The following files are served from [/app/configurations/](tree/master/app/confi
 | --- | --- | --- |
 | FeatureMatrix | todo: fill this table | Grid, StacksVis |
 
-> **TODO** Further documentation of data model and views
-
-Web Server Configurations
------
-> These configuration files **SHOULD NOT** be checked-in to individual project repositories.
-
-### proxy.json ###
-  * Provides information to npm dev server
-  * Configures remote and local proxies to web services
-
-### ningx.conf ###
-  * Provides information to NGINX web server
-  * Configures remote and local proxies to web services
+> @todo: further documentation of data model and views
