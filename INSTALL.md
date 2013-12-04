@@ -18,45 +18,37 @@
 ### Build tools and libraries
 
 1. Globally install core build tools (yeoman, grunt, and bower)
+```
+[sudo] npm install -g yo grunt-cli bower
+```
 
-  ```
-  cd /path/to/project
-  npm install -g yo grunt-cli bower
-  ```
-
-2. Build and test dependencies (downloads and installs dependencies listed in package.json to the `node_modules` subdirectory)
-
-  ```
-  cd /path/to/project
-  npm install
-  ```
+2. Build and test dependencies (downloads and installs dependencies listed in package.json to the `node_modules` subdirectory, not to be checked-in)
+```
+cd /path/to/project
+npm install
+```
 
 3. Installs client-side JavaScript dependencies
+```
+cd /path/to/project
+bower install
+```
 
-  ```
-  cd /path/to/project
-  bower install
-  ```
+### Starting a local instance of the application (with Grunt) 
+> This serves the web app locally, opens a browser pointed at the local web server, and opens a watch task that 
+> reloads the browser automatically when core files (html, css, js) are modified.  It does not build the web app for 
+> distibution, as the code becomes difficult to debug when uglified/minified.
+```
+grunt server
+```
 
 ### Building the project
-> The entire static package should be created in the `dist` subdirectory.  This directory can be copied or linked from any 
-> web server serving static content as is
-
+> The entire static package should be created in the `dist` subdirectory.  This directory can be copied or linked from any web server serving static content as is
 ```
 grunt build
 ```
 
-> Alternative to generate un-minified, un-uglified JavaScript code (@TODO: source maps)
-
+> Alternative to generate un-minified, un-uglified JavaScript code
 ```
 grunt build:debug
-```
-
-### Starting the application (with Grunt) 
-> This serves the web app locally, opens a browser pointed at the local web server, and opens a watch task that 
-> reloads the browser automatically when core files (html, css, js) are modified.  It does not build the web app for 
-> distibution, as the code becomes difficult to debug when uglified/minified.
-
-```
-grunt server &
 ```
