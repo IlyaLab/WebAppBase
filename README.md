@@ -44,9 +44,8 @@ Runtime Configuration
 The following files can be configured from [/app/configurations/](https://github.com/IlyaLab/WebAppBase/tree/master/app/configurations) directory.  Developers should also check-in custom configuration files for their web apps.
 
 ### [display.json](https://github.com/IlyaLab/WebAppBase/blob/master/app/configurations/display.json) ###
- * Specifies identifying UI elements (e.g. titles, links in the About menu)
- * Specifies links
- * Configures Hangout URL
+ * Identifying UI elements (e.g. titles, links in the About menu)
+ * Hangout URL
 
 ### Example configuration ###
 ```json
