@@ -15,9 +15,8 @@ Initial Dev Setup
 -----
 1. Fork this repository
 2. Complete [Installation Guide](https://github.com/IlyaLab/WebAppBase/blob/master/INSTALL.md) instructions 
-3. Execute ```grunt server ```
-4. Browser should automatically open at [http://localhost:9010](http://localhost:9010)
-5. Customize README.md and INSTALL.md with specific proxies and configurations (see below)
+3. Customize README.md and INSTALL.md with specific proxies and configurations (see below)
+4. Complete Web Services setup and Runtime Configuration
 
 Web Services
 -----
