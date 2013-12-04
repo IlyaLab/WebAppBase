@@ -1,5 +1,5 @@
 # Web App Base #
-This project provies a Web Application Template to standardize the development of new HTML5 web applications and
+This project provides a Web Application Template to standardize the development of new HTML5 web applications and
 web services for the [Shmulevich Group](http://shmulevich.systemsbiology.net) at the 
 [Institute for Systems Biology](http://systemsbiology.org).  It allows our team to reduce development and maintainance 
 time, and supports rapid prototyping.
@@ -10,23 +10,41 @@ time, and supports rapid prototyping.
 
 > **Browser Support**
 > The web applications developed using this template will adopt the HTML5 standard.  Backwards compatibility
-> with some older generation browsers is resolved through use of Google Chrome Frame (http://www.google.com/chromeframe).
-> We will work to ensure that this template supports mobile devices and tablets using HTML5 web browsers.  But
-> we will focus our testing efforts to the most commonly-used platforms: iOS and Android.
-
+> with some older generation browsers is resolved through use of Google Chrome Frame (http://www.google.com/chromeframe) although support for this plugin will soon be deprecated (2014).
+> We will work to ensure that this template also supports tablets using HTML5 web browsers.  But we will focus our testing efforts to the most commonly-used platforms: iOS and Android.
 
 Initial Dev Setup
 -----
 1. Fork this repository
 2. Complete [Installation Guide](https://github.com/IlyaLab/WebAppBase/blob/master/INSTALL.md) instructions 
-3. Install [Addama :: OAUTH Web Services](https://github.com/IlyaLab/Addama)
-4. Execute ```grunt server &```
-5. Open browser at [http://localhost:9010](http://localhost:9010)
+3. Execute ```grunt server ```
+4. Browser should automatically open at [http://localhost:9010](http://localhost:9010)
+5. Customize README.md and INSTALL.md with specific proxies and configurations (see below)
+
+Web Services
+-----
+Developers on forked web applications should configure the [Grunt](http://gruntjs.com/) web server using [*proxy.json*](blob/master/proxy.json) to point proxies at production or development [Addama](https://github.com/IlyaLab/Addama) instances and/or deploy a local [Addama](https://github.com/IlyaLab/Addama) installation.
+
+These web services can be integrated using simple web proxies services. Example query:
+   * [/datastores/ds/KIRC-SEQ-20131113/feature_matrix?gene=TP53&gene=KRAS&gene=13q13.3](https://csacr.systemsbiology.net/development/datastores/ds/KIRC-SEQ-20131113/feature_matrix?gene=TP53&gene=KRAS&gene=13q13.3)
+
+This template accesses the following APIs presented by a deployed version of [Addama](https://github.com/IlyaLab/Addama):
+```
+    /datastores - GET access to NOSQL databases (i.e. MongoDB)
+        HTTP query parameters accepted for filtering (?gene=TP53&gene=KRAS)
+
+    /data - GET access to local data file repositories (e.g. tar.gz, .tsv, .img)
+    
+    /storage - GET/POST access to NOSQL databases (i.e. MongoDB)
+        accepts arbitrary objects at arbitrary URIs
+        @todo: provide example query
+```
+
+A standard development deployment should access ```/data``` and/or ```/datastores``` from a [production](https://genespot.cancerregulome.org/svc/data) or a [development service](https://csacr.systemsbiology.net/development), whereas ```/storage``` should be accessed from a  [local instance](http://localhost:9010/svc/storage).
 
 Runtime Configuration
 -----
-* This template is meant to be used in conjunction with https://github.com/IlyaLab/Addama
-* The following files are served through the /svc/configurations base URI
+The following files are served from [/app/configurations/](tree/master/app/configurations) directory
 
 ### display.json ###
  * Location: web services configurations path
