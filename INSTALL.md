@@ -33,6 +33,7 @@ npm install
 cd /path/to/project
 bower install
 ```
+> Also run after adding a JS dependency in [bower.json](https://github.com/IlyaLab/WebAppBase/blob/master/bower.json)
 
 ### Starting a local instance of the application (with Grunt) 
 > This serves the web app locally, opens a browser pointed at the local web server, and opens a watch task that 
